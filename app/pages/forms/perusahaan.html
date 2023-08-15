@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIAK | Perusahaan</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.min.css">
+  <!-- CodeMirror -->
+  <link rel="stylesheet" href="../../plugins/codemirror/codemirror.css">
+  <link rel="stylesheet" href="../../plugins/codemirror/theme/monokai.css">
+  <!-- SimpleMDE -->
+  <link rel="stylesheet" href="../../plugins/simplemde/simplemde.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="../../index.php" class="nav-link">Home</a>
+        </li>
+        <!-- <li class="nav-item d-none d-sm-inline-block">
+          <a href="#" class="nav-link">Contact</a>
+        </li> -->
+      </ul>
+  
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+        <li class="nav-item">
+          <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+            <i class="fas fa-search"></i>
+          </a>
+          <div class="navbar-search-block">
+            <form class="form-inline">
+              <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                  <button class="btn btn-navbar" type="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                  <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </li>
+  
+        <!-- Messages Dropdown Menu -->
+        
+        <!-- Notifications Dropdown Menu -->
+        
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+            <i class="fas fa-expand-arrows-alt"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+            <i class="fas fa-th-large"></i>
+          </a>
+        </li>
+        <div class="navbar-logout">
+          <a href="../../../index.php" type="button" class="btn btn-danger">Logout</a>
+        </div>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+  
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="../../index.php" class="brand-link">
+        <span class="brand-text"><strong>SIAK</strong></span>
+      </a>
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user (optional) -->
+       
+        <!-- SidebarSearch Form -->
+        
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+                 with font-awesome or any other icon font library -->
+            <li class="nav-item">
+              <a href="../../index.php" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Dashboard
+                </p>
+              </a>
+            </li>
+            <li class="nav-item menu-open">
+              <a href="#" class="nav-link active">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Input Data
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="../forms/perusahaan.html" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Data Perusahaan</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../forms/akun.html" class="nav-link ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Data Kelompok Akun</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../forms/saldo.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Data Keuangan</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-table"></i>
+                <p>
+                  Data Tabel
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="../tables/jsgrid.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Data Perusahaan</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../tables/simple.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Data Laporan</p>
+                  </a>
+                </li>
+                
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+  
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Input Data Perusahaan</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="../../index.php">Home</a></li>
+                <li class="breadcrumb-item active">Input Data Pe rusahaan</li>
+              </ol>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+              <!-- general form elements -->
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Data Perusahaan</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="exampleInputNoAkun">Nama Perusahaan</label>
+                      <input type="text" class="form-control" id="NamaPerusahaan" placeholder="Nama Perusahaan">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputNoAkun">Alamat Perusahaan</label>
+                      <input type="text" class="form-control" id="AlamatPerusahaan" placeholder="Alamat Perusahaan">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Nomer Telepon Perusahaan</label>
+                      <input type="text" class="form-control" id="NoTelpPerusahaan" placeholder="No Telpon Perusahaan">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea2">Tanggal Perusahaan Berdiri</label>
+                      <input type="date" class="form-control" id="TglPerusahaan" placeholder="Tanggal Perusahaan">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea3">Email Perusahaan</label>
+                      <input type="text" class="form-control" id="EmailPerusahaan" placeholder="Email Perusahaan">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea4">Nomer Fax Perusahaan</label>
+                      <input type="text" class="form-control" id="NoFaxP" placeholder="No Fax Perusahaan">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea5">Nama Pemilik Perusahaan</label>
+                      <input type="text" class="form-control" id="NamaPemilikP" placeholder="Nama Pemilik Perusahaan">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea6">Susunan Pemegang Saham</label>
+                      <textarea class="form-control" id="SPS" rows="3" placeholder="Susunan Pemegang Saham"></textarea>
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea7">Jenis Perusahaan</label>
+                      <input type="text" class="form-control" id="JenisPerusahaan" placeholder="Jenis Perusahaan">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea8">Dokumen Pendukung (.zip)</label>
+                      <br>
+                      <input type="file" class="form-group" id="validatedCustomFile" required>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer">
+                    <button href="../../saldo.html" type="submit" class="btn btn-success col-md-12">Simpan</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!--/.col (left) -->
+            <!-- right column -->
+            <!--/.col (right) -->
+          </div>
+          <!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </section>
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+      <strong>Copyright &copy; 2023 <a href="https://www.instagram.com/alifcalvinn/">ACPW</a>.</strong>
+    </footer>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+    </aside>
+  </div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- Summernote -->
+<script src="../../plugins/summernote/summernote-bs4.min.js"></script>
+<!-- CodeMirror -->
+<script src="../../plugins/codemirror/codemirror.js"></script>
+<script src="../../plugins/codemirror/mode/css/css.js"></script>
+<script src="../../plugins/codemirror/mode/xml/xml.js"></script>
+<script src="../../plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    // Summernote
+    $('#summernote').summernote()
+
+    // CodeMirror
+    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+      mode: "htmlmixed",
+      theme: "monokai"
+    });
+  })
+</script>
+</body>
+</html>
