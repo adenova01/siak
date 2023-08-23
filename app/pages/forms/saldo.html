@@ -69,10 +69,6 @@
             </form>
           </div>
         </li>
-  
-        <!-- Messages Dropdown Menu -->
-        
-        <!-- Notifications Dropdown Menu -->
         
         <li class="nav-item">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
@@ -129,7 +125,7 @@
                 <li class="nav-item">
                   <a href="../forms/akun.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Data Kelompok Akun</p>
+                    <p>Data Akun</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -207,24 +203,24 @@
                     <table id="satuan" class="table table-responsive">
                       <thead>
                           <tr>
-                              <th class="text-center">Opsi</th>
-                              <th class="text-center">Nomer Akun</th>
-                              <th class="text-center">Nama Akun</th>
-                              <th class="text-center">Keterangan</th>
-                              <th class="text-center">Kelompok Akun</th>
-                              <th class="text-center">Kategori Kelompok Akun</th>
-                              <th class="text-center">Tanggal Transaksi</th>
-                              <th class="text-center">Kelompok Saldo</th>
-                              <th class="text-center">Nominal</th>
-                              <th class="text-center">Opsi</th>
+                              <th class="text-center">Pilihan</th>
+                              <th class="text-center" style="width: 135px;">Nomer Akun</th>
+                              <th class="text-center" style="width: 200px;">Nama Akun</th>
+                              <th class="text-center" style="width: 200px;">Keterangan</th>
+                              <th class="text-center" style="width: 200px;">Kelompok Akun</th>
+                              <th class="text-center" style="width: 200px;">Kategori Kelompok Akun</th>
+                              <th class="text-center" style="width: 80px;">Tanggal Transaksi</th>
+                              <th class="text-center" >Kelompok Saldo (D/K)</th>
+                              <th class="text-center" style="width: 200px;">Nominal</th>
+                              <th class="text-center" >Opsi</th>
                           </tr>
                       </thead>
                       <tbody id="tbody2">
-                          
                       </tbody>
                       <tfoot>
                             <tr>
                               <td colspan="12" align="center">
+                              <input id="rupiah" type="text" class="form-control rupiah" name="rupiah" placeholder="Nominal">
                               <button type="button" class="btn btn-primary" onclick="addRow('tbody2')">Tambah Baris</button>
                               <button type="button" class="btn btn-danger" onclick="bulkDelete()">Hapus Baris</button>
                               </td>
@@ -233,14 +229,12 @@
                   </table>
                   </div>
                   <!-- /.card-body -->
-  
                   <div class="card-footer">
                     <button type="submit" class="btn btn-primary col-md-12">Simpan</button>
                   </div>
                 </form>
               </div>
             </div>
-          
           </div>
           <!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -249,7 +243,7 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-      <strong>Copyright &copy; 2023 <a href="https://www.instagram.com/alifcalvinn/">ACPW</a>.</strong>
+      <strong>Copyright &copy; 2023 <a href="https://www.richardrisambessybudiman.com/">KAP Richard Risambessy</a>.</strong>
     </footer>
   
     <!-- Control Sidebar -->
@@ -298,7 +292,7 @@
       kelompok_akun: "",
       kategori_kelompok_akun: "",
       tgl_trx: "",
-      jenis_saldo: "hjavsdjhasvd",
+      jenis_saldo: "",
       nominal: ""
     }
   ]
@@ -389,7 +383,7 @@
 
   // Get the template HTML and remove it from the doumenthe template HTML and remove it from the doument
   var previewNode = document.querySelector("#template")
-  previewNode.id = ""
+  // previewNode.id = ""
   var previewTemplate = previewNode.parentNode.innerHTML
   previewNode.parentNode.removeChild(previewNode)
 
@@ -442,8 +436,8 @@
     table.innerHTML = "";
     let tr = "";
     let checkedField = ``
+    console.log(keuangan);
     keuangan.forEach((item, index) => {
-
 
       if(item.opsi){
         checkedField = `<input onchange="selectionDelete(${index}, this)" checked name="chk_a[]" type="checkbox" class="checkall_a" value="true"/>`
@@ -451,13 +445,14 @@
         checkedField = `<input onchange="selectionDelete(${index}, this)" name="chk_a[]" type="checkbox" class="checkall_a" value="false"/>`
       }
 
-      tr += `<tr>
+      tr += 
+          `<tr>
               <td>
                 ${checkedField}
               </td>
               <td>
                 <div class="form-group">
-                <input type="text" class="form-control" required="required" name="nama[]" placeholder="Nomer Akun">
+                <input type="text" onchange="setArray('.choa-${index}', 'nomer_akun')" class="form-control choa-${index}" value="${item.nomer_akun != "" ? item.nomer_akun : ""}" required="required" name="nama[]" placeholder="CHOA">
                 </div>
               </td>
               <td>
@@ -472,27 +467,27 @@
               </td>
               <td>
                 <div class="form-group">
-                <select id="" class="form-control" name="kelompok[]" placeholder="Pilih Kelompok">
+                <select id="" class="form-control" name="kelompok[]">
                 </div>
               </td>
               <td>
                 <div class="form-group">
-                <select id="" class="form-control" name="kategori[]" placeholder="Pilih Kategori">
+                <select id="" class="form-control" name="kategori[]">
                 </div>
               </td>
               <td>
                 <div class="form-group">
-                <input type="date" class="form-control" name="tanggal[]" placeholder="Pilih Tanggal">
+                <input type="date" class="form-control" name="tanggal[]">
                 </div>
               </td>
               <td>
                 <div class="form-group">
-                <select id="" class="form-control" name="saldo[]" placeholder="Debit/Kredit">
+                <select id="" class="form-control" name="saldo[]">
                 </div>
               </td>
               <td>
                 <div class="form-group">
-                <input type="text" class="form-control" name="kredit[]" placeholder="Nominal Kredit">
+                <input type="text" class="form-control rupiah-${index}" onkeyup="formatRupiah('.rupiah-${index}')" name="rupiah[]" placeholder="Nominal" value="${item.nominal != "" ? item.nominal : ""}">
                 </div>
               </td>
               <td>
@@ -506,25 +501,26 @@
     table.innerHTML = tr;
   }
 
+  
   function selectionDelete(index, e)
   {
     keuangan[index].opsi = e.value;
     initRow();
-    /* keuangan.splice(index, 1, {
-      opsi: value,
-      nomer_akun: "",
-      nama_akun: "",
-      keterangan: "",
-      kelompok_akun: "",
-      kategori_kelompok_akun: "",
-      tgl_trx: "",
-      jenis_saldo: "",
-      nominal: ""
-    })
-    initRow(); */
+    // keuangan.splice(index, 1, {
+    //   opsi: value,
+    //   nomer_akun: "",
+    //   nama_akun: "",
+    //   keterangan: "",
+    //   kelompok_akun: "",
+    //   kategori_kelompok_akun: "",
+    //   tgl_trx: "",
+    //   jenis_saldo: "",
+    //   nominal: ""
+    // })
+    // keuangan[index].opsi = e.value;
+    // initRow();
   }
 
-  // DropzoneJS Demo Code End
   function addRow(tableID) {
     keuangan.push({
       opsi: true,
@@ -538,33 +534,6 @@
       nominal: ""
     })
     initRow();
-    // var table = document.getElementById(tableID);
-    /* var rowCount = table.rows.length;
-    var row = table.insertRow(rowCount);
-    var colCount = table.rows[0].cells.length;
-    for(var i=0; i<colCount; i++) {
-        var newcell = row.insertCell(i);
-        newcell.innerHTML = table.rows[0].cells[i].innerHTML;
-        var child = newcell.children;
-        for(var i2=0; i2<child.length; i2++) {
-            var test = newcell.children[i2].tagName;
-            switch(test) {
-                case "INPUT":
-                    if(newcell.children[i2].type=='checkbox'){
-                        newcell.children[i2].value = "";
-                        newcell.children[i2].checked = false;
-                    }else{
-                        newcell.children[i2].value = "";
-                    }
-                break;
-                case "SELECT":
-                    newcell.children[i2].value = "";
-                break;
-                default:
-                break;
-            }
-        }
-    } */
 }
 
 function sisipkanRow(tableID, index)
@@ -601,34 +570,51 @@ function bulkDelete()
 function deleteRow(tableID, index)
 {
     try
-         {
+        {
+          
         var table = document.getElementById(tableID);
         keuangan.splice(index, 1);
         initRow();
-        // table.deleteRow(index);
-            /* for(var i=0; i<rowCount; i++)
-                {
-                var row = table.rows[i];
-                var chkbox = row.cells[0].childNodes[0];
-                if (null != chkbox && true == chkbox.checked)
-                    {
-                    if (rowCount <= 1)
-                        {
-                        alert("Tidak dapat menghapus semua baris.");
-                        break;
-                        }
-                    table.deleteRow(i);
-                    rowCount--;
-                    i--;
-                    }
-                } */
-      } catch(e)
-    {
-    alert(e);
-    }
- }
- 
+
+        } 
+        catch(e){
+
+        alert(e);
+
+        }
+}
+
 </script>
+</script>
+<script type="text/javascript">
+
+  function setArray(selector, field)
+  {
+    let value = document.querySelector(selector).value;
+    let idx = parseInt(selector.split("-")[1]);
+    keuangan[idx][field] = value;
+  }
+
+  function formatRupiah(selector, prefix = "Rp. ") {
+    let angka = document.querySelector(selector).value
+    var number_string = angka.replace(/[^,\d]/g, '').toString(),
+      split = number_string.split(','),
+      sisa = split[0].length % 3,
+      rupiah = split[0].substr(0, sisa),
+      ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+ 
+      if(ribuan){
+        separator = sisa ? '.' : ''; 
+        rupiah += separator + ribuan.join('.');
+      }
+ 
+      rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+      document.querySelector(selector).value = prefix+rupiah;
+      let idx = parseInt(selector.split("-")[1]);
+      keuangan[idx]['nominal'] = prefix+rupiah;
+      // return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+
+  }
 </script>
 </body>
 </html>

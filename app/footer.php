@@ -1,6 +1,6 @@
 
 <footer class="main-footer">
-    <strong>Copyright &copy; 2023 <a href="https://www.instagram.com/alifcalvinn/">ACPW</a>.</strong>
+    <strong>Copyright &copy; 2023 <a href="https://www.richardrisambessybudiman.com/">KAP Richard Risambessy</a>.</strong>
 </footer>
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>

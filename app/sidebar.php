@@ -28,7 +28,7 @@
               <li class="nav-item">
                 <a href="pages/forms/akun.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data Kelompok Akun</p>
+                  <p>Data Akun</p>
                 </a>
               </li>
               <li class="nav-item">

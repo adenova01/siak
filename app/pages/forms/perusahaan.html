@@ -3,6 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+    .upload-container{
+    position:relative;
+    }
+
+    .upload-container input{
+      border:1px solid #fcfcfc;
+      background:#f1f1f1;
+      outline:2px dashed #8b8b8b;
+      outline-offset:-10px;
+      padding:100px 0 100px 250px;
+      text-align:center !important;
+      width:1175px
+    }
+
+    .upload-container input:hover{
+      background:#ddd;
+    }
+
+    .upload-container:before{
+      position:absolute;
+      bottom:50px;
+      left:150px;
+      padding-left: 350px;
+      content:" Drag and Drop files here. ";
+      color:#133e42;
+      font-weight:900
+    }
+    
+    .upload-btn{
+      margin-left:200px;
+      padding:7px 20px
+    }
+
+  </style> 
+
   <title>SIAK | Perusahaan</title>
 
   <!-- Google Font: Source Sans Pro -->
@@ -124,7 +161,7 @@
                 <li class="nav-item">
                   <a href="../forms/akun.html" class="nav-link ">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Data Kelompok Akun</p>
+                    <p>Data Akun</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -156,7 +193,6 @@
                     <p>Data Laporan</p>
                   </a>
                 </li>
-                
               </ul>
             </li>
           </ul>
@@ -178,7 +214,7 @@
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="../../index.php">Home</a></li>
-                <li class="breadcrumb-item active">Input Data Pe rusahaan</li>
+                <li class="breadcrumb-item active">Input Data Perusahaan</li>
               </ol>
             </div>
           </div>
@@ -236,15 +272,14 @@
                       <label for="exampleFormControlTextarea7">Jenis Perusahaan</label>
                       <input type="text" class="form-control" id="JenisPerusahaan" placeholder="Jenis Perusahaan">
                     </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlTextarea8">Dokumen Pendukung (.zip)</label>
-                      <br>
-                      <input type="file" class="form-group" id="validatedCustomFile" required>
+                    <div class="upload-container">
+                      <label>Dokumen Perusahaan</label>
+                      <input type="file" id="file_upload" multiple />
                     </div>
                   </div>
                   <!-- /.card-body -->
                   <div class="card-footer">
-                    <button href="../../saldo.html" type="submit" class="btn btn-success col-md-12">Simpan</button>
+                    <a href="saldo.html" type="submit" class="btn btn-success col-md-12" onclick="uploadFilesI()">Simpan</a>
                   </div>
                 </form>
               </div>
@@ -259,7 +294,7 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-      <strong>Copyright &copy; 2023 <a href="https://www.instagram.com/alifcalvinn/">ACPW</a>.</strong>
+      <strong>Copyright &copy; 2023 <a href="https://www.richardrisambessybudiman.com/">KAP Richard Risambessy</a>.</strong>
     </footer>
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -293,7 +328,20 @@
       mode: "htmlmixed",
       theme: "monokai"
     });
-  })
+  }) 
+
+  function uploadFiles() {
+  var files = document.getElementById('file_upload').files;
+  if(files.length==0){
+    alert("Please first choose or drop any file(s)...");
+    return;
+  }
+  var filenames="";
+  for(var i=0;i<files.length;i++){
+    filenames+=files[i].name+"\n";
+  }
+  alert("Selected file(s) :\n____________________\n"+filenames);
+}
 </script>
 </body>
 </html>
